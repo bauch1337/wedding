@@ -56,6 +56,7 @@
             flex-direction: column;
             align-items: center;
             gap: 20px; /* Více prostoru mezi tlačítky */
+            padding: 0 20px; /* Více prostoru kolem tlačítek */
         }
 
         .link-item, .expand-btn {
@@ -63,7 +64,8 @@
             border: 2px solid #bfa760;
             padding: 20px 30px; /* Větší padding pro více prostoru */
             border-radius: 10px;
-            width: 300px;
+            width: 100%; /* Šířka přizpůsobena */
+            max-width: 320px; /* Maximální šířka tlačítek */
             text-align: center;
             font-size: 1.2rem;
             transition: 0.3s;
@@ -130,17 +132,17 @@
         <h1>Svatební informace</h1>
 
         <div class="links">
-            <div class="link-item" onclick="scrollToSection('photo-gallery')">
-                Galerie fotek
-            </div>
-            <div class="link-item" onclick="scrollToSection('services-content')">
-                Zobrazit služby
-            </div>
             <div class="link-item">
                 <a href="https://www.weddingchateau.cz" target="_blank">Svatební stránky</a>
             </div>
             <div class="link-item">
                 <a href="https://www.zbiroh.com" target="_blank">Zámek Zbiroh stránky</a>
+            </div>
+            <div class="link-item" onclick="scrollToSection('photo-gallery')">
+                Galerie fotek
+            </div>
+            <div class="link-item expand-btn" onclick="scrollToSection('services-content')">
+                Zobrazit služby
             </div>
         </div>
 
