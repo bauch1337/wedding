@@ -2,6 +2,10 @@
 <html lang="cs">
 <head>
     <meta charset="UTF-8">
+   <!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Svatební informace | Zámek Zbiroh</title>
     <style>
@@ -55,21 +59,21 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 20px; /* Více prostoru mezi tlačítky */
-            padding: 0 20px; /* Více prostoru kolem tlačítek */
+            gap: 20px;
+            padding: 0 20px;
         }
 
-        .link-item, .expand-btn {
+        .link-item, .expand-btn, .vcard-btn {
             background-color: white;
             border: 2px solid #bfa760;
-            padding: 20px 30px; /* Větší padding pro více prostoru */
+            padding: 20px 30px;
             border-radius: 10px;
-            width: 100%; /* Šířka přizpůsobena */
-            max-width: 320px; /* Maximální šířka tlačítek */
+            width: 100%;
+            max-width: 320px;
             text-align: center;
             font-size: 1.2rem;
             transition: 0.3s;
-            cursor: pointer; /* Zajistí, že se tlačítko celé chová jako klikatelné */
+            cursor: pointer;
         }
 
         .link-item a {
@@ -80,14 +84,14 @@
             color: inherit;
         }
 
-        .link-item:hover, .expand-btn:hover {
+        .link-item:hover, .expand-btn:hover, .vcard-btn:hover {
             background-color: #bfa760;
             color: white;
         }
 
         .expandable-content, .gallery {
             display: none;
-            margin-top: 30px; /* Větší mezera nahoře */
+            margin-top: 30px;
             font-size: 1rem;
             color: #333;
             background-color: #fff;
@@ -110,7 +114,7 @@
         }
 
         @media (max-width: 768px) {
-            .link-item, .expand-btn {
+            .link-item, .expand-btn, .vcard-btn {
                 width: 100%;
             }
 
@@ -146,6 +150,10 @@
             </div>
             <div class="link-item expand-btn" onclick="scrollToSection('services-content')">
                 Zobrazit služby
+            </div>
+            <!-- Tlačítko pro stažení vizitky -->
+            <div class="vcard-btn">
+                <a href="vcf.vcf" download="vizitka.vcf">Stáhnout vizitku</a>
             </div>
         </div>
 
