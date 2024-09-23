@@ -69,17 +69,20 @@
             text-align: center;
             font-size: 1.2rem;
             transition: 0.3s;
+            cursor: pointer; /* Zajistí, že se tlačítko celé chová jako klikatelné */
+        }
+
+        .link-item a {
+            display: block;
+            width: 100%;
+            height: 100%;
+            text-decoration: none;
+            color: inherit;
         }
 
         .link-item:hover, .expand-btn:hover {
             background-color: #bfa760;
             color: white;
-            cursor: pointer;
-        }
-
-        .link-item a {
-            text-decoration: none;
-            color: inherit;
         }
 
         .expandable-content, .gallery {
