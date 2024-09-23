@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Svatební informace | Zámek Zbiroh</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            color: #bfa760;
+            margin-bottom: 20px;
+        }
+
+        .profile {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+
+        .profile img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #bfa760;
+            margin-bottom: 15px;
+        }
+
+        .contact-info {
+            text-align: center;
+        }
+
+        .contact-info p {
+            margin: 5px 0;
+            font-size: 1.2rem;
+        }
+
+        .links {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .link-item, .expand-btn {
+            background-color: white;
+            border: 2px solid #bfa760;
+            padding: 15px 25px;
+            border-radius: 10px;
+            width: 300px;
+            text-align: center;
+            font-size: 1.2rem;
+            transition: 0.3s;
+        }
+
+        .link-item:hover, .expand-btn:hover {
+            background-color: #bfa760;
+            color: white;
+            cursor: pointer;
+        }
+
+        .link-item a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .expandable-content, .gallery {
+            display: none;
+            margin-top: 20px;
+            font-size: 1rem;
+            color: #333;
+            background-color: #fff;
+            border: 2px solid #bfa760;
+            border-radius: 10px;
+            padding: 15px;
+            text-align: left;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .gallery img {
+            width: 100%;
+            max-width: 300px;
+            border-radius: 10px;
+            border: 2px solid #bfa760;
+        }
+
+        .show {
+            display: block;
+        }
+
+        @media (max-width: 768px) {
+            .link-item, .expand-btn {
+                width: 100%;
+            }
+
+            .profile img {
+                width: 120px;
+                height: 120px;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="profile">
+        <img src="URL-NA-OBRÁZEK" alt="Profilový obrázek">
+        <div class="contact-info">
+            <p><strong>Jméno: Svatební koordinátor</strong></p>
+            <p>Telefon: +420 123 456 789</p>
+            <p>Email: koordinator@zbiroh.com</p>
+        </div>
+    </div>
+
+    <h1>Svatební informace</h1>
+
+    <div class="links">
+        <div class="link-item">
+            <a href="https://www.weddingchateau.cz" target="_blank">Svatební stránky</a>
+        </div>
+        <div class="link-item" onclick="toggleContent('photo-gallery')">
+            Galerie fotek
+        </div>
+        <div class="link-item">
+            <a href="https://www.zbiroh.com" target="_blank">Zámek Zbiroh stránky</a>
+        </div>
+        <div class="link-item expand-btn" onclick="toggleContent('services-content')">
+            Zobrazit služby
+        </div>
+    </div>
+
+    <div class="gallery" id="photo-gallery">
+        <div>
+            <img src="https://via.placeholder.com/300x200.png?text=Svatební+fotografie+1" alt="Svatební fotografie 1">
+            <p>Naše šťastná nevěsta a ženich.</p>
+        </div>
+        <div>
+            <img src="https://via.placeholder.com/300x200.png?text=Svatební+fotografie+2" alt="Svatební fotografie 2">
+            <p>Romantické chvíle na zámku.</p>
+        </div>
+        <div>
+            <img src="https://via.placeholder.com/300x200.png?text=Svatební+fotografie+3" alt="Svatební fotografie 3">
+            <p>Detaily, které dělají den jedinečným.</p>
+        </div>
+    </div>
+
+    <div class="expandable-content" id="services-content">
+        <h2>Služby</h2>
+        <p>
+            Nabízíme kompletní svatební služby na Zámku Zbiroh, včetně organizace obřadů, slavnostních večeří a ubytování pro vaše hosty. S naší svatební koordinátorkou můžete doladit každý detail vašeho velkého dne.
+        </p>
+    </div>
+</div>
+
+<script>
+    function toggleContent(id) {
+        // Skryj všechny sekce (galerie a služby)
+        var sections = document.querySelectorAll('.gallery, .expandable-content');
+        sections.forEach(function(section) {
+            section.classList.remove('show');
+        });
+
+        // Zobraz vybranou sekci
+        var element = document.getElementById(id);
+        element.classList.add('show');
+    }
+</script>
+</body>
+</html>
