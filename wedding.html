@@ -2,12 +2,8 @@
 <html lang="cs">
 <head>
     <meta charset="UTF-8">
-   <!DOCTYPE html>
-<html lang="cs">
-<head>
-    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Svatební informace | Zámek Zbiroh</title>
+    <title>Zámek Zbiroh | Svatební info</title>
     <style>
         body {
             font-family: 'Arial', sans-serif;
@@ -24,35 +20,69 @@
             padding: 20px;
         }
 
-        h1 {
-            font-size: 2.5rem;
-            color: #bfa760;
-            margin-bottom: 30px;
-        }
-
-        .profile {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin-bottom: 30px;
-        }
-
-        .profile img {
+        .logo-circle {
             width: 150px;
             height: 150px;
             border-radius: 50%;
             object-fit: cover;
             border: 3px solid #bfa760;
-            margin-bottom: 15px;
+            margin: 0 auto 20px auto;
+            background-image: url('logo-bez-textu.png');
+            background-size: cover;
+            background-position: center;
         }
 
         .contact-info {
             text-align: center;
+            margin-bottom: 10px;
         }
 
         .contact-info p {
             margin: 5px 0;
             font-size: 1.2rem;
+        }
+
+        .contact-info a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+
+        .vcard {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .vcard img {
+            width: 40px;
+            height: 40px;
+            margin-right: 10px;
+        }
+
+        .vcard-btn {
+            background-color: white;
+            border: 2px solid #bfa760;
+            padding: 10px 20px;
+            border-radius: 10px;
+            font-size: 1rem;
+            text-align: center;
+            transition: 0.3s;
+        }
+
+        .vcard-btn a {
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+
+        .vcard-btn:hover {
+            background-color: #bfa760;
+            color: white;
         }
 
         .links {
@@ -61,9 +91,10 @@
             align-items: center;
             gap: 20px;
             padding: 0 20px;
+            margin-top: 30px;
         }
 
-        .link-item, .expand-btn, .vcard-btn {
+        .link-item {
             background-color: white;
             border: 2px solid #bfa760;
             padding: 20px 30px;
@@ -73,48 +104,23 @@
             text-align: center;
             font-size: 1.2rem;
             transition: 0.3s;
-            cursor: pointer;
         }
 
         .link-item a {
+            text-decoration: none;
+            color: inherit;
             display: block;
             width: 100%;
             height: 100%;
-            text-decoration: none;
-            color: inherit;
         }
 
-        .link-item:hover, .expand-btn:hover, .vcard-btn:hover {
+        .link-item:hover {
             background-color: #bfa760;
             color: white;
         }
 
-        .expandable-content, .gallery {
-            display: none;
-            margin-top: 30px;
-            font-size: 1rem;
-            color: #333;
-            background-color: #fff;
-            border: 2px solid #bfa760;
-            border-radius: 10px;
-            padding: 15px;
-            text-align: left;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-        }
-
-        .gallery img {
-            width: 100%;
-            max-width: 300px;
-            border-radius: 10px;
-            border: 2px solid #bfa760;
-        }
-
-        .show {
-            display: block;
-        }
-
         @media (max-width: 768px) {
-            .link-item, .expand-btn, .vcard-btn {
+            .link-item, .vcard-btn {
                 width: 100%;
             }
 
@@ -127,74 +133,38 @@
 </head>
 <body>
     <div class="container">
-        <div class="profile">
-            <img src="URL-NA-OBRÁZEK" alt="Profilový obrázek">
-            <div class="contact-info">
-                <p><strong>Jméno: Svatební koordinátor</strong></p>
-                <p>Telefon: +420 123 456 789</p>
-                <p>Email: koordinator@zbiroh.com</p>
+        <div class="logo-circle"></div>
+
+        <div class="contact-info">
+            <p><strong>Renata Páchová</strong></p>
+            <p>Email: <a href="mailto:svatba@zbiroh.com">svatba@zbiroh.com</a></p>
+            <p>Telefon: <a href="tel:+420602237590">+420 602 237 590</a></p>
+        </div>
+
+        <!-- vCard sekce -->
+        <div class="vcard">
+           
+            <div class="vcard-btn">
+                <a href="vizitka.vcf" download="vizitka.vcf">Stáhnout vizitku</a>
             </div>
         </div>
 
-        <h1>Svatební informace</h1>
-
+        <!-- Odkazy -->
         <div class="links">
             <div class="link-item">
-                <a href="https://www.weddingchateau.cz" target="_blank">Svatební stránky</a>
+                <a href="https://www.facebook.com/chateauzbiroh/" target="_blank">Facebook</a>
             </div>
             <div class="link-item">
-                <a href="https://www.zbiroh.com" target="_blank">Zámek Zbiroh stránky</a>
+                <a href="https://www.instagram.com/weddingzbiroh/" target="_blank">Instagram</a>
             </div>
-            <div class="link-item" onclick="scrollToSection('photo-gallery')">
-                Galerie fotek
+            <div class="link-item">
+                <a href="https://www.weddingchateau.cz/" target="_blank">Webové stránky</a>
             </div>
-            <div class="link-item expand-btn" onclick="scrollToSection('services-content')">
-                Zobrazit služby
+            <div class="link-item">
+                <a href="https://www.weddingchateau.cz/dotaznik-pro-cenovou-nabidku/" target="_blank">Dotazník</a>
             </div>
-            <!-- Tlačítko pro stažení vizitky -->
-            <div class="vcard-btn">
-                <a href="vcf.vcf" download="vizitka.vcf">Stáhnout vizitku</a>
-            </div>
-        </div>
-
-        <div class="gallery" id="photo-gallery">
-            <div>
-                <img src="https://via.placeholder.com/300x200.png?text=Svatební+fotografie+1" alt="Svatební fotografie 1">
-                <p>Naše šťastná nevěsta a ženich.</p>
-            </div>
-            <div>
-                <img src="https://via.placeholder.com/300x200.png?text=Svatební+fotografie+2" alt="Svatební fotografie 2">
-                <p>Romantické chvíle na zámku.</p>
-            </div>
-            <div>
-                <img src="https://via.placeholder.com/300x200.png?text=Svatební+fotografie+3" alt="Svatební fotografie 3">
-                <p>Detaily, které dělají den jedinečným.</p>
-            </div>
-        </div>
-
-        <div class="expandable-content" id="services-content">
-            <h2>Služby</h2>
-            <p>
-                Nabízíme kompletní svatební služby na Zámku Zbiroh, včetně organizace obřadů, slavnostních večeří a ubytování pro vaše hosty. S naší svatební koordinátorkou můžete doladit každý detail vašeho velkého dne.
-            </p>
         </div>
     </div>
-
-    <script>
-        function scrollToSection(id) {
-            // Skryj všechny sekce
-            var sections = document.querySelectorAll('.gallery, .expandable-content');
-            sections.forEach(function(section) {
-                section.classList.remove('show');
-            });
-
-            // Zobraz vybranou sekci
-            var element = document.getElementById(id);
-            element.classList.add('show');
-
-            // Posuň stránku na začátek sekce
-            element.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }
-    </script>
 </body>
 </html>
+
